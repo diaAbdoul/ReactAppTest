@@ -13,9 +13,9 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
+            <Route exact path={`${process.env.PUBLIC_URL}/`}  component={Home} />
+            <Route path={`${process.env.PUBLIC_URL}/counter`}  component={Counter} />
+            <Route path={`${process.env.PUBLIC_URL}/fetch-data`}  component={FetchData} />
       </Layout>
     );
   }
