@@ -1,11 +1,17 @@
+variables:
+  MY_GLOBAL_VAR : 'ZEN MAN'
 stages:
 - stage: build
+  variables:
+    MY_STAGE_VAR: 'STAGE VAR'
   jobs:
   - job: job1
+    variables:
+      MY_JOB_VAR: 'JOB VAR'
     strategy: 
       parallel: 4
     steps:
-    - script: echo Zenman on board
+    - script: echo Zenman on board $(MY_GLOBAL_VAR) - $(MY_STAGE_VAR) - $(MY_JOB_VAR)
 - stage: copy
   jobs:
     - job: copy
