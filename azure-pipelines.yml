@@ -6,3 +6,4 @@ jobs:
 - job: one
   steps:
   - script: echo hello Abdoul
+  - script: echo $(name)
