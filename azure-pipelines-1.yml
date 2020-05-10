@@ -1,0 +1,16 @@
+stages:
+- stage: build
+  jobs:
+  - job: job1
+    steps:
+    - script: echo Zenman on board
+- stage: copy
+  jobs:
+    - job: copy
+      steps:
+        - script: echo copying files
+- stage: Deploy
+  jobs:
+    - job: deploy
+      steps:
+        - script: echo deploying
