@@ -21,7 +21,7 @@ steps:
   - task: DotNetCoreCLI@2
     inputs:
       command: 'publish'
-      publishWebProjects: true
+      publishWebProjects: false
       arguments: '--configuration $(BuildConfiguration) --output BlazorApp3Publish'
       workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3Build'
       zipAfterPublish: True
