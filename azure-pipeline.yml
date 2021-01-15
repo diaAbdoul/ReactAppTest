@@ -17,7 +17,7 @@ steps:
   - task: Bash@3
     inputs:
       targetType: 'inline'
-      script: 'ls BlazorApp3Build'
+      script: 'ls cd BlazorApp3Build'
   - task: DotNetCoreCLI@2
     inputs:
       command: 'publish'
