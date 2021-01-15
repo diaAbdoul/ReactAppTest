@@ -18,6 +18,13 @@ steps:
     inputs:
       targetType: 'inline'
       script: 'ls BlazorApp3Build'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'publish'
+      publishWebProjects: true
+      arguments: '--output BlazorApp3Publish'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3Build'
+    
   
   
 
