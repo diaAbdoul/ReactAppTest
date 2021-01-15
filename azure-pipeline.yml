@@ -29,7 +29,7 @@ steps:
     inputs:
       command: publish
       publishWebProjects: false
-      arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+      arguments: '--output $(Build.ArtifactStagingDirectory)'
       workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3'
       zipAfterPublish: True
 
