@@ -9,3 +9,9 @@ steps:
       command: 'restore'
       projects: 'BlazorApp3/*.csproj'
       feedsToUse: 'select'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
+      projects: 'BlazorApp3/*.csproj'
+      arguments: '--output BlazorApp3Build'
+
