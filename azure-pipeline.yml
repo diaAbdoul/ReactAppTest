@@ -13,17 +13,17 @@ steps:
     inputs:
       command: 'build'
       projects: 'BlazorApp3/*.csproj'
-      arguments: '--output BlazorApp3Build'
+      # arguments: '--output BlazorApp3Build'
   - task: Bash@3
     inputs:
       targetType: 'inline'
-      script: 'cd BlazorApp3Build'
+      # script: 'cd BlazorApp3Build'
   - task: DotNetCoreCLI@2
     inputs:
       command: 'publish'
       publishWebProjects: false
       arguments: '--configuration $(BuildConfiguration) --output BlazorApp3Publish'
-      workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3Build'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3'
       zipAfterPublish: True
   
   
