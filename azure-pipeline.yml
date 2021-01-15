@@ -22,9 +22,9 @@ steps:
     inputs:
       command: 'publish'
       publishWebProjects: true
-      arguments: '--output BlazorApp3Publish'
+      arguments: '--configuration $(BuildConfiguration) --output BlazorApp3Publish'
       workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3Build'
-    
+      zipAfterPublish: True
   
   
 
