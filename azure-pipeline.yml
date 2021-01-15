@@ -1,0 +1,11 @@
+
+trigger:
+- "*"
+
+steps:
+  - task: DotNetCoreCLI@2
+    displayName: Restore
+    inputs:
+      command: 'restore'
+      projects: 'BlazorApp3/*.csproj'
+      feedsToUse: 'select'
