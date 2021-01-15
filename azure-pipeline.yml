@@ -18,13 +18,26 @@ steps:
     inputs:
       targetType: 'inline'
       # script: 'cd BlazorApp3Build'
+  # - task: DotNetCoreCLI@2
+  #   inputs:
+  #     command: 'publish'
+  #     publishWebProjects: false
+  #     arguments: '--output BlazorApp3Publish'
+  #     workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3'
+  #     zipAfterPublish: True
   - task: DotNetCoreCLI@2
     inputs:
-      command: 'publish'
+      command: publish
       publishWebProjects: false
-      arguments: '--output BlazorApp3Publish'
+      arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
       workingDirectory: '$(System.DefaultWorkingDirectory)/BlazorApp3'
       zipAfterPublish: True
-  
+
+# this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+      artifactName: 'BlazorApp3'
+
   
 
