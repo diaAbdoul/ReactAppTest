@@ -1,9 +1,10 @@
-name:
-  $(Date:yyyymmdd)$(Rev:.r)
-variables:
-  var1: value1
-jobs:
-- job: one
-  steps:
-  - script: echo hello Abdoul
-  - script: echo $(var1)
+trigger:
+- "*"
+
+steps:
+  - task: DotNetCoreCLI@2
+    displayName: Restore
+    inputs:
+      command: 'restore'
+      projects: 'BlazorApp3/*.csproj'
+      feedsToUse: 'select'
